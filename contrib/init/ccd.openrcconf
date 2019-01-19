@@ -1,0 +1,26 @@
+# /etc/conf.d/ccd: config file for /etc/init.d/ccd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/cc/cc.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/ccd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/ccd.pid"
+
+# Where to write ccd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/ccd"
+
+# User and group to own ccd process
+#BITCOIND_USER="cc"
+#BITCOIND_GROUP="cc"
+
+# Path to ccd executable
+#BITCOIND_BIN="/usr/bin/ccd"
+
+# Nice value to run ccd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

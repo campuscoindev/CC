@@ -1,0 +1,635 @@
+qt/test/test_cc_qt-moc_uritests.o: qt/test/moc_uritests.cpp \
+  qt/test/uritests.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/include/QtCore/QObject \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/include/QtCore/qobject.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qobjectdefs.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qnamespace.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qglobal.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstddef \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__config \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/stddef.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/__stddef_max_align_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__nullptr \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stddef.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qconfig.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qfeatures.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qsystemdetection.h \
+  /usr/include/TargetConditionals.h /usr/include/Availability.h \
+  /usr/include/AvailabilityInternal.h /usr/include/AvailabilityMacros.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qprocessordetection.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qcompilerdetection.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/utility \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tuple \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstring \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string.h \
+  /usr/include/string.h /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
+  /usr/include/i386/_types.h /usr/include/sys/_pthread/_pthread_types.h \
+  /usr/include/sys/_types/_size_t.h /usr/include/sys/_types/_null.h \
+  /usr/include/sys/_types/_ssize_t.h /usr/include/machine/types.h \
+  /usr/include/i386/types.h /usr/include/sys/_types/_int8_t.h \
+  /usr/include/sys/_types/_int16_t.h /usr/include/sys/_types/_int32_t.h \
+  /usr/include/sys/_types/_int64_t.h /usr/include/sys/_types/_u_int8_t.h \
+  /usr/include/sys/_types/_u_int16_t.h \
+  /usr/include/sys/_types/_u_int32_t.h \
+  /usr/include/sys/_types/_u_int64_t.h \
+  /usr/include/sys/_types/_intptr_t.h \
+  /usr/include/sys/_types/_uintptr_t.h /usr/include/strings.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdint \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdint.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/stdint.h \
+  /usr/include/stdint.h /usr/include/_types/_uint8_t.h \
+  /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h \
+  /usr/include/_types/_uint64_t.h /usr/include/_types/_intmax_t.h \
+  /usr/include/_types/_uintmax_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__debug \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdlib \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdlib.h \
+  /usr/include/stdlib.h /usr/include/sys/wait.h \
+  /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_id_t.h \
+  /usr/include/sys/signal.h /usr/include/sys/appleapiopts.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h \
+  /usr/include/mach/machine/_structs.h /usr/include/mach/i386/_structs.h \
+  /usr/include/sys/_pthread/_pthread_attr_t.h \
+  /usr/include/sys/_types/_sigaltstack.h \
+  /usr/include/sys/_types/_ucontext.h \
+  /usr/include/sys/_types/_sigset_t.h /usr/include/sys/_types/_uid_t.h \
+  /usr/include/sys/resource.h /usr/include/sys/_types/_timeval.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
+  /usr/include/sys/_types/_ct_rune_t.h /usr/include/sys/_types/_rune_t.h \
+  /usr/include/sys/_types/_wchar_t.h /usr/include/sys/_types/_dev_t.h \
+  /usr/include/sys/_types/_mode_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__undef_macros \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iterator \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iosfwd \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wchar.h \
+  /usr/include/wchar.h /usr/include/sys/_types/_mbstate_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/stdarg.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdio.h \
+  /usr/include/stdio.h /usr/include/_stdio.h \
+  /usr/include/sys/_types/_va_list.h /usr/include/sys/stdio.h \
+  /usr/include/sys/_types/_off_t.h /usr/include/time.h \
+  /usr/include/sys/_types/_clock_t.h /usr/include/sys/_types/_time_t.h \
+  /usr/include/sys/_types/_timespec.h /usr/include/_wctype.h \
+  /usr/include/__wctype.h /usr/include/sys/_types/_wint_t.h \
+  /usr/include/_types/_wctype_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ctype.h \
+  /usr/include/ctype.h /usr/include/_ctype.h /usr/include/runetype.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/tuple \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdexcept \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cassert \
+  /usr/include/assert.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/atomic \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qtypeinfo.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qtypetraits.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qisenum.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qsysinfo.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qlogging.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qflags.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qatomic.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qbasicatomic.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qatomic_cxx11.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qgenericatomic.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qglobalstatic.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qmutex.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qnumeric.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qversiontagging.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qobjectdefs_impl.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qstring.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qchar.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qbytearray.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qrefcount.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qarraydata.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string_view \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__string \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdio \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwchar \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cctype \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wctype.h \
+  /usr/include/wctype.h /usr/include/_types/_wctrans_t.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qlist.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qalgorithms.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qiterator.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qhashfunctions.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qpair.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/numeric \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/list \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/limits.h \
+  /usr/include/limits.h /usr/include/machine/limits.h \
+  /usr/include/i386/limits.h /usr/include/i386/_limits.h \
+  /usr/include/sys/syslimits.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qbytearraylist.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qstringlist.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qregexp.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qstringmatcher.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qscopedpointer.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qmetatype.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qvarlengtharray.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qcontainerfwd.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__bit_reference \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__split_buffer \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tree \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qobject_impl.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/include/QtTest/QTest \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/include/QtTest/qtest.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qtest_global.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qtestcase.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qmetaobject.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qvariant.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qmap.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qhash.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qsharedpointer.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qshareddata.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qsharedpointer_impl.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qtemporarydir.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qdir.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qfileinfo.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qfile.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qfiledevice.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qiodevice.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/QScopedPointer \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qtestdata.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qbenchmark.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qbenchmarkmetric.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qdatetime.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qurl.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qpoint.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qsize.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qrect.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qmargins.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qtestsystem.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qcoreapplication.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qcoreevent.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qeventloop.h \
+  /Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qelapsedtimer.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/set
+
+qt/test/uritests.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/include/QtCore/QObject:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/include/QtCore/qobject.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qobjectdefs.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qnamespace.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qglobal.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstddef:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__config:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/stddef.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/__stddef_max_align_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__nullptr:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stddef.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qconfig.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qfeatures.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qsystemdetection.h:
+
+/usr/include/TargetConditionals.h:
+
+/usr/include/Availability.h:
+
+/usr/include/AvailabilityInternal.h:
+
+/usr/include/AvailabilityMacros.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qprocessordetection.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qcompilerdetection.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/utility:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tuple:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/type_traits:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/initializer_list:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstring:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string.h:
+
+/usr/include/string.h:
+
+/usr/include/_types.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/sys/_symbol_aliasing.h:
+
+/usr/include/sys/_posix_availability.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/i386/_types.h:
+
+/usr/include/sys/_pthread/_pthread_types.h:
+
+/usr/include/sys/_types/_size_t.h:
+
+/usr/include/sys/_types/_null.h:
+
+/usr/include/sys/_types/_ssize_t.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/i386/types.h:
+
+/usr/include/sys/_types/_int8_t.h:
+
+/usr/include/sys/_types/_int16_t.h:
+
+/usr/include/sys/_types/_int32_t.h:
+
+/usr/include/sys/_types/_int64_t.h:
+
+/usr/include/sys/_types/_u_int8_t.h:
+
+/usr/include/sys/_types/_u_int16_t.h:
+
+/usr/include/sys/_types/_u_int32_t.h:
+
+/usr/include/sys/_types/_u_int64_t.h:
+
+/usr/include/sys/_types/_intptr_t.h:
+
+/usr/include/sys/_types/_uintptr_t.h:
+
+/usr/include/strings.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdint:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdint.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/_types/_uint8_t.h:
+
+/usr/include/_types/_uint16_t.h:
+
+/usr/include/_types/_uint32_t.h:
+
+/usr/include/_types/_uint64_t.h:
+
+/usr/include/_types/_intmax_t.h:
+
+/usr/include/_types/_uintmax_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__debug:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/algorithm:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/typeinfo:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/exception:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdlib:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdlib.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/wait.h:
+
+/usr/include/sys/_types/_pid_t.h:
+
+/usr/include/sys/_types/_id_t.h:
+
+/usr/include/sys/signal.h:
+
+/usr/include/sys/appleapiopts.h:
+
+/usr/include/machine/signal.h:
+
+/usr/include/i386/signal.h:
+
+/usr/include/machine/_mcontext.h:
+
+/usr/include/i386/_mcontext.h:
+
+/usr/include/mach/machine/_structs.h:
+
+/usr/include/mach/i386/_structs.h:
+
+/usr/include/sys/_pthread/_pthread_attr_t.h:
+
+/usr/include/sys/_types/_sigaltstack.h:
+
+/usr/include/sys/_types/_ucontext.h:
+
+/usr/include/sys/_types/_sigset_t.h:
+
+/usr/include/sys/_types/_uid_t.h:
+
+/usr/include/sys/resource.h:
+
+/usr/include/sys/_types/_timeval.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/i386/endian.h:
+
+/usr/include/sys/_endian.h:
+
+/usr/include/libkern/_OSByteOrder.h:
+
+/usr/include/libkern/i386/_OSByteOrder.h:
+
+/usr/include/alloca.h:
+
+/usr/include/sys/_types/_ct_rune_t.h:
+
+/usr/include/sys/_types/_rune_t.h:
+
+/usr/include/sys/_types/_wchar_t.h:
+
+/usr/include/sys/_types/_dev_t.h:
+
+/usr/include/sys/_types/_mode_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/new:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__undef_macros:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iterator:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iosfwd:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wchar.h:
+
+/usr/include/wchar.h:
+
+/usr/include/sys/_types/_mbstate_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/stdarg.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdio.h:
+
+/usr/include/stdio.h:
+
+/usr/include/_stdio.h:
+
+/usr/include/sys/_types/_va_list.h:
+
+/usr/include/sys/stdio.h:
+
+/usr/include/sys/_types/_off_t.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/_types/_clock_t.h:
+
+/usr/include/sys/_types/_time_t.h:
+
+/usr/include/sys/_types/_timespec.h:
+
+/usr/include/_wctype.h:
+
+/usr/include/__wctype.h:
+
+/usr/include/sys/_types/_wint_t.h:
+
+/usr/include/_types/_wctype_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ctype.h:
+
+/usr/include/ctype.h:
+
+/usr/include/_ctype.h:
+
+/usr/include/runetype.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_base:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/tuple:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdexcept:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cassert:
+
+/usr/include/assert.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/atomic:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qtypeinfo.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qtypetraits.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qisenum.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qsysinfo.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qlogging.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qflags.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qatomic.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qbasicatomic.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qatomic_cxx11.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qgenericatomic.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qglobalstatic.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qmutex.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qnumeric.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qversiontagging.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qobjectdefs_impl.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qstring.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qchar.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qbytearray.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qrefcount.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qarraydata.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string_view:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__string:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdio:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwchar:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwctype:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cctype:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wctype.h:
+
+/usr/include/wctype.h:
+
+/usr/include/_types/_wctrans_t.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qlist.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qalgorithms.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qiterator.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qhashfunctions.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qpair.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/numeric:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/list:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/limits.h:
+
+/usr/include/limits.h:
+
+/usr/include/machine/limits.h:
+
+/usr/include/i386/limits.h:
+
+/usr/include/i386/_limits.h:
+
+/usr/include/sys/syslimits.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qbytearraylist.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qstringlist.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qregexp.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qstringmatcher.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qscopedpointer.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qmetatype.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qvarlengtharray.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qcontainerfwd.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__bit_reference:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/climits:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__split_buffer:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/map:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tree:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qobject_impl.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/include/QtTest/QTest:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/include/QtTest/qtest.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qtest_global.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qtestcase.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qmetaobject.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qvariant.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qmap.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qhash.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qsharedpointer.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qshareddata.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qsharedpointer_impl.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qtemporarydir.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qdir.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qfileinfo.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qfile.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qfiledevice.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qiodevice.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/QScopedPointer:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qtestdata.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qbenchmark.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qbenchmarkmetric.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qdatetime.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qurl.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qpoint.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qsize.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qrect.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qmargins.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtTest/qtestsystem.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qcoreapplication.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qcoreevent.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qeventloop.h:
+
+/Users/adebayoolabode/Desktop/projects/client/coins/campuscoin/cc-full-src/depends/x86_64-apple-darwin17.5.0/share/../include/QtCore/qelapsedtimer.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/set:
