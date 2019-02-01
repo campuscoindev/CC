@@ -1691,17 +1691,24 @@ int64_t GetProofOfWorkReward(int nHeight)
 
  	if (nHeight == 0) return 1 * COIN;
 	int64_t nSubsidy = 0;
-	if(nHeight == 1) {
-        nSubsidy = 950000000 * COIN;
-	} else if (nHeight > 1 && nHeight <= 100000) {
-		nSubsidy = 500 * COIN;
-	} else if (nHeight > 100000 && nHeight <= 760000) {
+    int64_t premineReward = 5000 * COIN;
+	if (nHeight > 6000000 && nHeight <= 759200) {
+		nSubsidy = 250 * COIN;
+	} else if (nHeight > 759200 && nHeight <= 760000) {
 		nSubsidy = 250 * COIN;
 	}
     //premine blocks start from 760001 to 800000
-    else if (nHeight > 760001 && nHeight <= 800000) {
-        nSubsidy = 5250 * COIN;
-    }  else if (nHeight > 800000) {
+    else if (nHeight > 760000 && nHeight <= 800000) {
+        nSubsidy = 250 * COIN;
+        nSubsidy = premineReward + nSubsidy;
+    }
+    else if (nHeight > 800000 && nHeight <= 1018400) {
+        nSubsidy = 250 * COIN;
+    }
+    else if (nHeight > 1018400 && nHeight <= 1536800) {
+        nSubsidy = 250 * COIN;
+    }
+    else if (nHeight > 1536800) {
 		nSubsidy = 250 * COIN;
 	}
 	return nSubsidy;
@@ -1713,25 +1720,26 @@ int64_t GetProofOfStakeReward(int nHeight)
  	if (nHeight == 0) return 1 * COIN;
 
 	int64_t nSubsidy = 0;
+    int64_t premineReward = 5000 * COIN;
 
-	if(nHeight == 1) {
-        nSubsidy = 950000000 * COIN;
-	} else if (nHeight > 1 && nHeight <= 100000) {
+	 if (nHeight > 6000001 && nHeight <= 759200) {
 		nSubsidy = 110 * COIN;
-	} else if (nHeight > 100000 && nHeight <= 760000) {
-		nSubsidy = 110 * COIN;
+	} else if (nHeight > 759200 && nHeight <= 760000) {
+		nSubsidy = 77 * COIN;
 	}
         //premine blocks start from 760001 to 800000
-    else if (nHeight > 760001 && nHeight <= 800000) {
-        nSubsidy = 5250 * COIN;
+     else if (nHeight > 760000 && nHeight <= 800000) {
+
+         nSubsidy = 64.45 * COIN;
+         nSubsidy = premineReward + nSubsidy;
+     }
+     else if (nHeight > 800000 && nHeight <= 1018400) {
+         nSubsidy = 64.45 * COIN;
+     }
+    else if (nHeight > 1018400 && nHeight <= 1536800) {
+        nSubsidy = 64.45 * COIN;
     }
-    else if (nHeight > 800000 && nHeight <= 1050000) {
-        nSubsidy = 110 * COIN;
-    }else if (nHeight > 1050000 && nHeight <= 2100000) {
-        	nSubsidy = 77 * COIN;
-	} else if (nHeight > 2100000 && nHeight <= 3150000) {
-		nSubsidy = 65.45 * COIN;
-	} else if (nHeight > 3150000) {
+     else if (nHeight > 1536800) {
 		nSubsidy = 45.82 * COIN;
 	}
 	return nSubsidy;
@@ -1753,51 +1761,66 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int tier, int nMas
 {
 
 	int64_t ret = 0;
-      if (nHeight > 1 && nHeight <= 1050000) {
+      if (nHeight > 1 && nHeight <= 6000000) {
         switch(tier) {
         case 1:
     	    ret = 175 * COIN; // tier 1
             break;
         case 2:
-            ret = 350 * COIN; // tier 2
+            ret = 400 * COIN; // tier 2
             break;
         case 3:
             ret = 850 * COIN; // tier 3
             break;
 
         }
-    } else if (nHeight > 1050000 && nHeight <= 2100000) {
+    } else if (nHeight > 6000000 && nHeight <= 759200) {
 	switch(tier) {
+        case 1:
+    	    ret = 175 * COIN;
+            break;
+        case 2:
+            ret = 400 * COIN;
+            break;
+        case 3:
+            ret = 850 * COIN;
+            break;
+        }
+    } else if (nHeight > 759200 && nHeight <= 1018400) {
+		switch(tier) {
         case 1:
     	    ret = 122.5 * COIN;
             break;
         case 2:
-            ret = 245 * COIN;
+            ret = 280 * COIN;
             break;
         case 3:
             ret = 595 * COIN;
             break;
         }
-    } else if (nHeight > 2100000 && nHeight <= 3150000) { // 104.125/208.25/505.75
-		switch(tier) {
-        case 1:
-    	    ret = 104.125 * COIN;
-            break;
-        case 2:
-            ret = 208.25 * COIN;
-            break;
-        case 3:
-            ret = 505.75 * COIN;
-            break;
-        }
-    } else if (nHeight > 3150000) { // 72.8875/145.775/354.025
+
+    } else if (nHeight > 1018400 && nHeight <= 1536800) {
+          switch(tier) {
+              case 1:
+                  ret = 104.15 * COIN;
+                  break;
+              case 2:
+                  ret = 238 * COIN;
+                  break;
+              case 3:
+                  ret = 505.75 * COIN;
+                  break;
+          }
+
+      }
+      else if (nHeight > 1536800) {
 
 	switch(tier) {
         case 1:
-    	    ret = 72.8875 * COIN;
+    	    ret =  72.95 * COIN;
             break;
         case 2:
-            ret = 145.775 * COIN;
+            ret = 166.6 * COIN;
             break;
         case 3:
             ret = 354.025 * COIN;

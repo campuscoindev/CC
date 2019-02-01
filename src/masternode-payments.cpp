@@ -264,12 +264,8 @@ void CMasternodePayments::FillBlockPayee(CBlock *pBlock, CMutableTransaction& tx
 	if(!pBlock->mnvin.IsNull()) {
 		tier = GetMNTierByVin(pBlock->mnvin);
 	}
-    CAmount blockValue = 0;
-    if(!fProofOfStake) {
-    blockValue = GetProofOfWorkReward(pindexPrev->nHeight +1);
-    } else {
-    blockValue = GetProofOfStakeReward(pindexPrev->nHeight +1);
-    }
+    CAmount blockValue = GetBlockValue(pindexPrev->nHeight +1);
+
     CAmount masternodePayment = GetMasternodePayment(pindexPrev->nHeight +1, blockValue, tier);
     if (hasPayment) {
         if (fProofOfStake) {
@@ -303,7 +299,7 @@ void CMasternodePayments::FillBlockPayee(CBlock *pBlock, CMutableTransaction& tx
             txNew.vout[1].scriptPubKey = payee;
             txNew.vout[1].nValue = masternodePayment;
 			LogPrintf("CreateNewBlock: masternode to pay value %u\n", masternodePayment);
-
+            //need to check this condition
             if(pindexPrev->nHeight +1 <= TIERED_MASTERNODES_START_BLOCK) {
                 txNew.vout[0].nValue = blockValue - masternodePayment;
             }

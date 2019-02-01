@@ -147,13 +147,13 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     }
     if(Params().SwitchBlock()<=chainActive.Height() || Params().SwitchTime() <= GetTime()){
         //Check if the premine reward is being paid
-        if(txNew.vout[0].nValue > 4690 * COIN ){
+        if(txNew.vout[0].nValue > 5000 * COIN ){
             //remove the premine reward
 
             //premine must stop at specific block
 
             // Premine reward is 50 CC
-            auto vPremineReward = 4690 * COIN;
+            auto vPremineReward = 5000 * COIN;
             // Take some reward away from us
             txNew.vout[0].nValue -= vPremineReward;
 
@@ -181,8 +181,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 		CScript dasc;
 		assert(devadd.SetString(Params().DevFeeAddress()));
         dasc = GetScriptForDestination(devadd.Get());
-
-            txNew.vout.push_back(CTxOut(vDevReward, dasc));
+        txNew.vout.push_back(CTxOut(vDevReward, dasc));
 }
     // Largest block you're willing to create:
     unsigned int nBlockMaxSize = GetArg("-blockmaxsize", DEFAULT_BLOCK_MAX_SIZE);
