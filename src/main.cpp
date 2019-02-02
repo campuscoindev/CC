@@ -1686,13 +1686,26 @@ double ConvertBitsToDouble(unsigned int nBits)
     return dDiff;
 }
 
-int64_t GetProofOfWorkReward(int nHeight)
-{
-
- 	if (nHeight == 0) return 1 * COIN;
-	int64_t nSubsidy = 0;
+int64_t GetProofOfWorkReward(int nHeight) {
+    CBlockIndex *pindex = chainActive.Tip();
+    CBlock block = CBlock(pindex->GetBlockHeader());
+    int tier = GetMNTierByVin(block.mnvin);
+    int64_t mnPayment = GetMasternodePayment(chainActive.Height(), 0, tier);
+    if (nHeight == 0) return 1 * COIN;
+    int64_t nSubsidy = 250 * COIN;
     int64_t premineReward = 5000 * COIN;
-	if (nHeight > 6000000 && nHeight <= 759200) {
+    if (nHeight == 1) {
+        return 200000000 * COIN;
+    }
+    else if (nHeight > 1 && nHeight <= 210000) {
+        nSubsidy = 250 * COIN;
+
+    }
+    else if (nHeight > 210000 && nHeight <= 600000) {
+        nSubsidy = 250 * COIN;
+
+     }
+	else if (nHeight > 600000 && nHeight <= 759200) {
 		nSubsidy = 250 * COIN;
 	} else if (nHeight > 759200 && nHeight <= 760000) {
 		nSubsidy = 250 * COIN;
@@ -1717,12 +1730,27 @@ int64_t GetProofOfWorkReward(int nHeight)
 
 int64_t GetProofOfStakeReward(int nHeight)
 {
+    CBlockIndex* pindex = chainActive.Tip();
+    CBlock block  = CBlock(pindex->GetBlockHeader());
+    int tier = GetMNTierByVin(block.mnvin);
+    int64_t mnPayment = GetMasternodePayment(chainActive.Height(), 0, tier);
  	if (nHeight == 0) return 1 * COIN;
 
 	int64_t nSubsidy = 0;
     int64_t premineReward = 5000 * COIN;
 
-	 if (nHeight > 6000001 && nHeight <= 759200) {
+    if (nHeight == 1) {
+        return 200000000 * COIN;
+    }
+    else if (nHeight > 1 && nHeight <= 210000) {
+        nSubsidy = 250 * COIN;
+
+    }
+    else if (nHeight > 210000 && nHeight <= 600000) {
+        nSubsidy = 250 * COIN;
+
+    }
+    else if (nHeight > 6000000 && nHeight <= 759200) {
 		nSubsidy = 110 * COIN;
 	} else if (nHeight > 759200 && nHeight <= 760000) {
 		nSubsidy = 77 * COIN;
@@ -3333,18 +3361,19 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
 {
     // Check proof of work matches claimed amount
     //disable this check temporarily
-    CBlock block2 = (CBlock)block;
-    if (fCheckPOW && !CheckProofOfWork(block2.GetPoWHash(), block.nBits))
+    CBlock checkBlock = CBlock(block);
+
+    if (fCheckPOW && !CheckProofOfWork(checkBlock.GetPoWHash(), checkBlock.nBits))
         return state.DoS(50, error("CheckBlockHeader() : proof of work failed"),
             REJECT_INVALID, "high-hash");
 
     // Check timestamp
-   /**if (block.GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60)
+   if (block.GetBlockTime() > GetAdjustedTime() + 30 * 60)
         return state.Invalid(error("CheckBlockHeader(): block timestamp too far in the future"),
                              REJECT_INVALID, "time-too-new");
-       if (block.GetBlockTime() > GetAdjustedTime() + (block.IsProofOfStake() ? 180 : 7200)) // 3 minute future drift for PoS
-        return state.Invalid(error("CheckBlock() : block timestamp too far in the future"),
-            REJECT_INVALID, "time-too-new");*/
+    /**if (block.GetBlockTime() > GetAdjustedTime() + (block.IsProofOfStake() ? 180 : 7200)) // 3 minute future drift for PoS
+     return state.Invalid(error("CheckBlock() : block timestamp too far in the future"),
+         REJECT_INVALID, "time-too-new");*/
 
     return true;
 }

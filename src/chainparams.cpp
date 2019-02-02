@@ -97,14 +97,21 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-		(0, uint256("0x"))
-		;
+            (0, uint256("0x2cadd7467aa4ca55a8be084aa8779da4f250981cbd7a7e377a4502bb58e5578b"))
+             (100, uint256("0x1c6121023bb05a878cbf23f3f9e617d95619d6b1b3e78273f3d2a9ac0b5ac45c"))
+(20000, uint256("0xd795cfcaa90fe2ed5eae3dc0f977e439cb3b73a8ad01d97c5ecfa96e85e1b0cd"))
+(53000, uint256("0x65817384eba2fdf8c76d6a7f0758b2aa082b5dd415b7fbe8e989b4d6abe67e21"))
+(109000, uint256("0x705e2a49f194fd444fc58d05c40921591fb154b0758d5aba73a96cded8dc5fb6"))
+(310000, uint256("0x5aceee05e25fdb27d507c7bac71ac3b543451c7bd515f2cdf186cb50a833f8bd"))
+(520000, uint256("0x1658533541417d2f61ec78ceec735f63a2cb823d5108cebcbdc9e92c9d356dc4"))
+(603000, uint256("0x8268fa86dc84f0c64fe00b49c7978f9ea223f9adbc0b4da97af16966f120b335"))
+(730000, uint256("0x483ebda9c26173c500e19ab01537cb78880ddd012398610ecb12813c72d36c62"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    0, // * UNIX timestamp of last checkpoint block
-    0,    // * total number of transactions between genesis and last checkpoint
+    1548065800, // * UNIX timestamp of last checkpoint block
+    730000,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    0        // * estimated number of transactions per day after checkpoint
+   1440     // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -182,12 +189,6 @@ public:
         vSeeds.push_back(CDNSSeedData("seed6","CBPDS05.privatedns.org"));
 
 
-        /**vSeeds.push_back(CDNSSeedData("seed1","149.28.86.37"));
-        vSeeds.push_back(CDNSSeedData("seed2","45.32.195.245"));
-        vSeeds.push_back(CDNSSeedData("seed3","194.88.105.45"));
-        vSeeds.push_back(CDNSSeedData("seed4","192.99.224.33"));
-        vSeeds.push_back(CDNSSeedData("seed5","217.69.15.209"));*/
-
 
 
 
@@ -213,7 +214,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "0451da181f2aa16784748ef435c4ea704a029a4a8e1c1893eb7c6045b328a4f536105373bfb682305b3b733dc84e2f046e10bdaaabea052cc348552db9898b0c91";
+        strSporkKey = "0461d95b1b1a6765f37aa7bedd44c06f21dda45ed1979d8e5354204a0f10090457fc027d8baaa9ae1a05061bc8568fa36d1c54daa469ba82f1d1a6b6b71b6ca9e1";
 		nStartMasternodePayments = 1550188800; //02/15/2019 @ 12:00am (UTC)
 
 		CBitcoinAddress address;
@@ -276,16 +277,15 @@ public:
         const CAmount& genesisReward = 1 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0xb78197f0e175697646db1f738edc1ffdcb30588ebe70e7e16026489076577061"));
+        printf("%s %s",genesis.GetHash().ToString().c_str(), genesis.hashMerkleRoot.GetHex().c_str());
+        LogPrint("debug", "%s: block=%s  is merkleroot=%s\n", __func__, genesis.GetHash().ToString().c_str(), genesis.hashMerkleRoot.GetHex().c_str());
+        assert(hashGenesisBlock == uint256("0x018215dbcecbcd08837e83f57ea427027ebd7fddcdfb89e9fd3adf5d0c6d7bf9"));
         assert(genesis.hashMerkleRoot == uint256("0xfe793560988c86f809f33e79d78065962b0b4622d9d1e8f4c441c189b122cee0"));
 
         vSeeds.push_back(CDNSSeedData("seed1","CBTDS01.campuscoinproject.dns-cloud.net"));
         vSeeds.push_back(CDNSSeedData("seed2","CBTDS02.campuscoinproject.dns-cloud.net"));
         vSeeds.push_back(CDNSSeedData("seed3","CBTDS03.campuscoinproject.dns-cloud.net"));
-        /**
-        vSeeds.push_back(CDNSSeedData("seed1","149.28.206.48"));
-        vSeeds.push_back(CDNSSeedData("seed2","45.55.89.248"));
-        vSeeds.push_back(CDNSSeedData("seed3","149.28.86.37"));*/
+
 
 
 
@@ -309,7 +309,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "0451da181f2aa16784748ef435c4ea704a029a4a8e1c1893eb7c6045b328a4f536105373bfb682305b3b733dc84e2f046e10bdaaabea052cc348552db9898b0c91";
+        strSporkKey = "0473322ae4c63ea2f5ffded1e899ee7699f0add7867e2bfe6dfd50b9fc04de31b0e2b9c4da57ba0e083afcfa8d453aa7755eb99223c71da47faa14e9c3ca24246b";
         nStartMasternodePayments = 1546344000; //01/01/2019 @ 12:00am (UTC)
 
         CBitcoinAddress address;

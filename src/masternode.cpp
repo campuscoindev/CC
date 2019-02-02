@@ -208,7 +208,7 @@ void CMasternode::Check(bool forceCheck)
     if (!unitTest) {
 		CMutableTransaction tx = CMutableTransaction();
 		tx.vin.push_back(vin);
-		CAmount testValue = 5000 * COIN - 0.01 * COIN;
+		CAmount testValue = 500000 * COIN - 0.01 * COIN;
         if(pindexBestHeader->nHeight > TIERED_MASTERNODES_START_BLOCK) {
 			int tier = GetMNTierByVin(vin.prevout);
 			if(tier <= 0) {
