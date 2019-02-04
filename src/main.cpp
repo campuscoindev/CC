@@ -3361,19 +3361,21 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
 {
     // Check proof of work matches claimed amount
     //disable this check temporarily
+
     CBlock checkBlock = CBlock(block);
 
-    if (fCheckPOW && !CheckProofOfWork(checkBlock.GetPoWHash(), checkBlock.nBits))
-        return state.DoS(50, error("CheckBlockHeader() : proof of work failed"),
-            REJECT_INVALID, "high-hash");
+     if (fCheckPOW && !CheckProofOfWork(checkBlock.GetPoWHash(), checkBlock.nBits))
+         return state.DoS(50, error("CheckBlockHeader() : proof of work failed"),
+             REJECT_INVALID, "high-hash");
 
-    // Check timestamp
-   if (block.GetBlockTime() > GetAdjustedTime() + 30 * 60)
-        return state.Invalid(error("CheckBlockHeader(): block timestamp too far in the future"),
-                             REJECT_INVALID, "time-too-new");
-    /**if (block.GetBlockTime() > GetAdjustedTime() + (block.IsProofOfStake() ? 180 : 7200)) // 3 minute future drift for PoS
-     return state.Invalid(error("CheckBlock() : block timestamp too far in the future"),
-         REJECT_INVALID, "time-too-new");*/
+     // Check timestamp
+     if (block.GetBlockTime() > GetAdjustedTime() + 30 * 60)
+          return state.Invalid(error("CheckBlockHeader(): block timestamp too far in the future"),
+                               REJECT_INVALID, "time-too-new");
+/**
+      if (block.GetBlockTime() > GetAdjustedTime() + (block.IsProofOfStake() ? 180 : 7200)) // 3 minute future drift for PoS
+       return state.Invalid(error("CheckBlock() : block timestamp too far in the future"),
+           REJECT_INVALID, "time-too-new");*/
 
     return true;
 }

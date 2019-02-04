@@ -277,8 +277,6 @@ public:
         const CAmount& genesisReward = 1 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         hashGenesisBlock = genesis.GetHash();
-        printf("%s %s",genesis.GetHash().ToString().c_str(), genesis.hashMerkleRoot.GetHex().c_str());
-        LogPrint("debug", "%s: block=%s  is merkleroot=%s\n", __func__, genesis.GetHash().ToString().c_str(), genesis.hashMerkleRoot.GetHex().c_str());
         assert(hashGenesisBlock == uint256("0x018215dbcecbcd08837e83f57ea427027ebd7fddcdfb89e9fd3adf5d0c6d7bf9"));
         assert(genesis.hashMerkleRoot == uint256("0xfe793560988c86f809f33e79d78065962b0b4622d9d1e8f4c441c189b122cee0"));
 
