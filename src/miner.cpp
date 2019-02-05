@@ -109,12 +109,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     txNew.vout[0].scriptPubKey = scriptPubKeyIn;
 	
 	CBlockIndex* prev = chainActive.Tip(); 
-	//txNew.vout[0].nValue = GetBlockValue(prev->nHeight+1);
-        if (!fProofOfStake) {
-	  txNew.vout[0].nValue = GetProofOfWorkReward(prev->nHeight + 1);
-        } else {
-          txNew.vout[0].nValue = GetProofOfStakeReward(prev->nHeight + 1);
-        }
+	txNew.vout[0].nValue = GetBlockValue(prev->nHeight+1);
+
     pblock->vtx.push_back(txNew);
     pblocktemplate->vTxFees.push_back(-1);   // updated at end
     pblocktemplate->vTxSigOps.push_back(-1); // updated at end
@@ -145,6 +141,9 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         if (!fStakeFound)
             return NULL;
     }
+    auto vDevReward = 50 * COIN;
+    // Premine reward is 5000 CC
+    auto vPremineReward = 5000 * COIN;
     if(Params().SwitchBlock()<=chainActive.Height() || Params().SwitchTime() <= GetTime()){
         //Check if the premine reward is being paid
         if(txNew.vout[0].nValue > 5000 * COIN ){
@@ -152,8 +151,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
             //premine must stop at specific block
 
-            // Premine reward is 50 CC
-            auto vPremineReward = 5000 * COIN;
+
             // Take some reward away from us
             txNew.vout[0].nValue -= vPremineReward;
 
@@ -171,17 +169,21 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
         }
 
+        // check if we can pay the dev reward
+        if(txNew.vout[0].nValue > vDevReward) {
             // Dev reward is 50 CC
-            auto vDevReward = 50 * COIN;
+
             // Take some reward away from us
             txNew.vout[0].nValue -= vDevReward;
 
-       // And give it to the dev
-		CBitcoinAddress devadd;
-		CScript dasc;
-		assert(devadd.SetString(Params().DevFeeAddress()));
-        dasc = GetScriptForDestination(devadd.Get());
-        txNew.vout.push_back(CTxOut(vDevReward, dasc));
+            // And give it to the dev
+            CBitcoinAddress devadd;
+            CScript dasc;
+            assert(devadd.SetString(Params().DevFeeAddress()));
+            dasc = GetScriptForDestination(devadd.Get());
+            txNew.vout.push_back(CTxOut(vDevReward, dasc));
+
+        }
 }
     // Largest block you're willing to create:
     unsigned int nBlockMaxSize = GetArg("-blockmaxsize", DEFAULT_BLOCK_MAX_SIZE);

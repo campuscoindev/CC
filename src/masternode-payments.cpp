@@ -283,13 +283,12 @@ void CMasternodePayments::FillBlockPayee(CBlock *pBlock, CMutableTransaction& tx
                 //subtract mn payment from the stake reward
                 if(txNew.vout[i - 1].nValue > masternodePayment) {
                     txNew.vout[i - 1].nValue -= masternodePayment;
-                    LogPrintf("fProofOfStake: after masternode pay %u\n", txNew.vout[i - 1].nValue);
+
                 } else {
                     uint64_t nSub = (masternodePayment / 2 / CENT) * CENT;
                     txNew.vout[i - 2].nValue -= nSub;
                     txNew.vout[i - 1].nValue -= masternodePayment - nSub;
-                    LogPrintf("fProofOfStake: after masternode pay 1 %u\n", txNew.vout[i - 1].nValue);
-                    LogPrintf("fProofOfStake: after masternode pay 2 %u\n", txNew.vout[i - 2].nValue);
+
                 }
             }
 

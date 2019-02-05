@@ -270,6 +270,9 @@ public:
         nMasternodeCountDrift = 20;
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = 3300000000 * COIN;
+        nSwitchTime = 1520188800;
+        nPremineTime = 1520188800;
+        nSwitchBlock = 10;
         int32_t nVersion = 1;
         uint32_t nTime = 1388880557;
         uint32_t nNonce = 387006691;
