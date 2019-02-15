@@ -264,9 +264,10 @@ void CMasternodePayments::FillBlockPayee(CBlock *pBlock, CMutableTransaction& tx
 	if(!pBlock->mnvin.IsNull()) {
 		tier = GetMNTierByVin(pBlock->mnvin);
 	}
-    CAmount blockValue = GetBlockValue(pindexPrev->nHeight +1);
 
-    CAmount masternodePayment = GetMasternodePayment(pindexPrev->nHeight +1, blockValue, tier);
+    CAmount bValue = GetBlockValue(pindexPrev->nHeight +1);
+    CAmount masternodePayment = GetMasternodePayment(pindexPrev->nHeight +1, bValue, tier);
+    CAmount blockValue = GetBlockValue(pindexPrev->nHeight +1,masternodePayment);
     if (hasPayment) {
         if (fProofOfStake) {
             /**For Proof Of Stake vout[0] must be null
@@ -279,7 +280,7 @@ void CMasternodePayments::FillBlockPayee(CBlock *pBlock, CMutableTransaction& tx
             txNew.vout[i].scriptPubKey = payee;
             txNew.vout[i].nValue = masternodePayment;
 
-            if(pindexPrev->nHeight +1 <= TIERED_MASTERNODES_START_BLOCK) {
+            //if(pindexPrev->nHeight +1 <= TIERED_MASTERNODES_START_BLOCK) {
                 //subtract mn payment from the stake reward
                 if(txNew.vout[i - 1].nValue > masternodePayment) {
                     txNew.vout[i - 1].nValue -= masternodePayment;
@@ -290,19 +291,23 @@ void CMasternodePayments::FillBlockPayee(CBlock *pBlock, CMutableTransaction& tx
                     txNew.vout[i - 1].nValue -= masternodePayment - nSub;
 
                 }
-            }
+            //}
 
 			LogPrintf("fProofOfStake: masternode to pay value %u\n", masternodePayment);
         } else {
-            txNew.vout.resize(2);
-            txNew.vout[1].scriptPubKey = payee;
-            txNew.vout[1].nValue = masternodePayment;
-			LogPrintf("CreateNewBlock: masternode to pay value %u\n", masternodePayment);
-            //need to check this condition
-            if(pindexPrev->nHeight +1 <= TIERED_MASTERNODES_START_BLOCK) {
+
+
+
+
+            if(txNew.vout[0].nValue > masternodePayment){
+                txNew.vout.resize(2);
                 txNew.vout[0].nValue = blockValue - masternodePayment;
+                txNew.vout[1].scriptPubKey = payee;
+                txNew.vout[1].nValue = masternodePayment;
+                LogPrintf("CreateNewBlock: masternode to pay value %u\n", masternodePayment);
+                LogPrintf("CreateNewBlock: blockvalue to pay value %u\n", blockValue - masternodePayment);
             }
-		    LogPrintf("CreateNewBlock: blockvalue to pay value %u\n", blockValue);
+
         }
 
         CTxDestination address1;

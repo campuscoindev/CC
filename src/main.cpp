@@ -207,16 +207,7 @@ namespace
 } // anon namespace
 
 bool IsMNCollateralValid(int nHeight, int64_t value) {
-    /**if (nHeight <= TIERED_MASTERNODES_START_BLOCK) {
-        return value == 5000*COIN;
-    } else {
-        // Using BOOST_FOREACH for concistency with the rest of the code, everything should be using a plain for from c++ 11 or 17
-        BOOST_FOREACH(PAIRTYPE(const int, int)& mntier, masternodeTiers)
-            {
-                if (value == (mntier.second)*COIN)
-                return true;
-            }
-        }*/
+
     // Using BOOST_FOREACH for concistency with the rest of the code, everything should be using a plain for from c++ 11 or 17
     BOOST_FOREACH(PAIRTYPE(const int, int)& mntier, masternodeTiers)
     {
@@ -227,11 +218,7 @@ bool IsMNCollateralValid(int nHeight, int64_t value) {
 }
 
 int64_t GetMNCollateral(int nHeight, int tier) {
-    /**if(nHeight <= TIERED_MASTERNODES_START_BLOCK) {
-        return 5000;
-    } else {
-        return masternodeTiers[tier];
-    }*/
+
     return masternodeTiers[tier];
 }
 
@@ -1689,6 +1676,8 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetProofOfWorkReward(int nHeight) {
     int64_t nSubsidy = 250 * COIN;
     int64_t premineReward = 5000 * COIN;
+    int64_t devReward = 50 * COIN;
+    nSubsidy = nSubsidy  + devReward;
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         if (nHeight==0){
             return 2000000 * COIN;
@@ -1716,15 +1705,15 @@ int64_t GetProofOfWorkReward(int nHeight) {
     }
     else if (nHeight > 600000 && nHeight <= 759200) {
         nSubsidy = 250 * COIN;
-    } else if (nHeight > 759200 && nHeight <= 760000) {
+    } else if (nHeight > 759200 && nHeight <= 779000) {
         nSubsidy = 250 * COIN;
     }
-        //premine blocks start from 760001 to 800000
-    else if (nHeight > 760000 && nHeight <= 800000) {
+        //premine blocks start from 779001 to 819000
+    else if (nHeight > 779000 && nHeight <= 819000) {
         nSubsidy = 250 * COIN;
         nSubsidy = premineReward + nSubsidy;
     }
-    else if (nHeight > 800000 && nHeight <= 1018400) {
+    else if (nHeight > 819000 && nHeight <= 1018400) {
         nSubsidy = 250 * COIN;
     }
     else if (nHeight > 1018400 && nHeight <= 1536800) {
@@ -1737,6 +1726,63 @@ int64_t GetProofOfWorkReward(int nHeight) {
 
 }
 
+
+int64_t GetProofOfWorkReward(int nHeight,CAmount masternodePayment) {
+    int64_t nSubsidy = 250 * COIN;
+    int64_t premineReward = 5000 * COIN;
+
+    int64_t devReward = 50 * COIN;
+    nSubsidy = nSubsidy + masternodePayment + devReward;
+
+    if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+        if (nHeight==0){
+            return 2000000 * COIN;
+        }
+        if(nHeight>0 && nHeight <=20){
+
+            nSubsidy = 250 * COIN;
+        }else if (nHeight > 20 && nHeight <= 100) {
+            nSubsidy = 250 * COIN;
+            nSubsidy = premineReward + nSubsidy;
+        }
+    }
+    if (nHeight == 0) return 1 * COIN;
+
+    if (nHeight == 1) {
+        return 200000000 * COIN;
+    }
+    else if (nHeight > 1 && nHeight <= 210000) {
+        nSubsidy = 250 * COIN;
+
+    }
+    else if (nHeight > 210000 && nHeight <= 600000) {
+        nSubsidy = 250 * COIN;
+
+    }
+    else if (nHeight > 600000 && nHeight <= 759200) {
+        nSubsidy = 250 * COIN;
+    } else if (nHeight > 759200 && nHeight <= 779000) {
+        nSubsidy = 250 * COIN;
+    }
+        //premine blocks start from 779001 to 819000
+    else if (nHeight > 779000 && nHeight <= 819000) {
+        nSubsidy = 250 * COIN;
+        nSubsidy = premineReward + nSubsidy;
+    }
+    else if (nHeight > 819000 && nHeight <= 1018400) {
+        nSubsidy = 250 * COIN;
+    }
+    else if (nHeight > 1018400 && nHeight <= 1536800) {
+        nSubsidy = 250 * COIN;
+    }
+    else if (nHeight > 1536800) {
+        nSubsidy = 250 * COIN;
+    }
+    return nSubsidy;
+
+}
+
+
 int64_t GetProofOfStakeReward(int nHeight)
 {
 
@@ -1744,6 +1790,8 @@ int64_t GetProofOfStakeReward(int nHeight)
 
     int64_t nSubsidy = 0;
     int64_t premineReward = 5000 * COIN;
+    int64_t devReward = 50 * COIN;
+    nSubsidy = nSubsidy  + devReward;
 
     if (nHeight == 1) {
         return 200000000 * COIN;
@@ -1758,16 +1806,61 @@ int64_t GetProofOfStakeReward(int nHeight)
     }
     else if (nHeight > 6000000 && nHeight <= 759200) {
         nSubsidy = 110 * COIN;
-    } else if (nHeight > 759200 && nHeight <= 760000) {
+    } else if (nHeight > 759200 && nHeight <= 779000) {
         nSubsidy = 77 * COIN;
     }
-        //premine blocks start from 760001 to 800000
-    else if (nHeight > 760000 && nHeight <= 800000) {
+        //premine blocks start from 779001 to 819000
+    else if (nHeight > 779000 && nHeight <= 819000) {
 
         nSubsidy = 64.45 * COIN;
         nSubsidy = premineReward + nSubsidy;
     }
-    else if (nHeight > 800000 && nHeight <= 1018400) {
+    else if (nHeight > 819000 && nHeight <= 1018400) {
+        nSubsidy = 64.45 * COIN;
+    }
+    else if (nHeight > 1018400 && nHeight <= 1536800) {
+        nSubsidy = 64.45 * COIN;
+    }
+    else if (nHeight > 1536800) {
+        nSubsidy = 45.82 * COIN;
+    }
+    return nSubsidy;
+}
+
+
+int64_t GetProofOfStakeReward(int nHeight,CAmount masternodePayment)
+{
+
+    if (nHeight == 0) return 1 * COIN;
+
+    int64_t nSubsidy = 0;
+    int64_t premineReward = 5000 * COIN;
+    int64_t devReward = 50 * COIN;
+    nSubsidy = nSubsidy + masternodePayment + devReward;
+
+    if (nHeight == 1) {
+        return 200000000 * COIN;
+    }
+    else if (nHeight > 1 && nHeight <= 210000) {
+        nSubsidy = 250 * COIN;
+
+    }
+    else if (nHeight > 210000 && nHeight <= 600000) {
+        nSubsidy = 250 * COIN;
+
+    }
+    else if (nHeight > 6000000 && nHeight <= 759200) {
+        nSubsidy = 110 * COIN;
+    } else if (nHeight > 759200 && nHeight <= 779000) {
+        nSubsidy = 77 * COIN;
+    }
+        //premine blocks start from 779001 to 819000
+    else if (nHeight > 779000 && nHeight <= 819000) {
+
+        nSubsidy = 64.45 * COIN;
+        nSubsidy = premineReward + nSubsidy;
+    }
+    else if (nHeight > 819000 && nHeight <= 1018400) {
         nSubsidy = 64.45 * COIN;
     }
     else if (nHeight > 1018400 && nHeight <= 1536800) {
@@ -1787,6 +1880,19 @@ int64_t GetBlockValue(int nHeight)
         ret=GetProofOfStakeReward(nHeight);
     } else {
         ret=GetProofOfWorkReward(nHeight);
+    }
+    return ret;
+}
+
+
+int64_t GetBlockValue(int nHeight,CAmount masternodePayment)
+{
+    int64_t ret=0;
+    CBlockIndex* pindex = chainActive.Tip();
+    if(pindex->IsProofOfStake()) {
+        ret=GetProofOfStakeReward(nHeight,masternodePayment);
+    } else {
+        ret=GetProofOfWorkReward(nHeight,masternodePayment);
     }
     return ret;
 }
@@ -2408,7 +2514,8 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         nExpectedMint = GetProofOfWorkReward(pindex->nHeight);
     }
 
-    if(pindex->nHeight > TIERED_MASTERNODES_START_BLOCK && !block.mnvin.hash.IsNull()) {
+    //re-enable this at a later date
+    /**if(pindex->nHeight > TIERED_MASTERNODES_START_BLOCK && !block.mnvin.hash.IsNull()) {
         int tier = GetMNTierByVin(block.mnvin);
         if(tier <= 0) {
             return state.DoS(100,
@@ -2417,7 +2524,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                              REJECT_INVALID, "bad-masternode-vin");
         }
         nExpectedMint += GetMasternodePayment(GetHeight(), 0, tier);
-    }
+    }*/
     if(block.IsProofOfStake()) {
         if (!IsBlockValueValid(block, nExpectedMint, pindex->nMint)) {
             return state.DoS(100,

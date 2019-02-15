@@ -155,8 +155,7 @@ public:
         nSwitchBlock = 760000;
         nDefaultPort = 28195;
         bnProofOfWorkLimit =  ~uint256(0) >> 20; // CC starting difficulty is 1 / 2^12  //20
-        //nLastPOWBlock = 900000;
-        nLastPOWBlock = 770000;
+        nLastPOWBlock = 764000;
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;
@@ -165,10 +164,11 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60;
         nTargetSpacing = 1 * 60;
+        nMaturityNew = 80;
         nMaturity = 15; 
         nMasternodeCountDrift = 20;
         nModifierUpdateBlock = 1;
-        nMaxMoneyOut = 3300000000 * COIN;
+        nMaxMoneyOut = 4010000000 * COIN; //3300000000 * COIN;
         nMaxMoneyOutOld = 2000000000 * COIN;
         int32_t nVersion = 1;
         uint32_t nTime = 1499360969;
@@ -265,7 +265,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60;
         nTargetSpacing = 1 * 60;
-        nMaturityNew = 15;
+        nMaturityNew = 80;
         nMaturity = 60;
         nMasternodeCountDrift = 20;
         nModifierUpdateBlock = 1;

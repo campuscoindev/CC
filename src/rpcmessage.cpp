@@ -363,7 +363,7 @@ Value sendmessagefrom(const Array& params, bool fHelp)
                                         "\"transactionid\"        (string) The transaction id.\n"
                                         "\nExamples:\n"
                                         "\nSend \"hello cc\" from the default account to the address.\n" +
-            HelpExampleCli("sendmessagefrom", "\"\" \"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" \"hello cc\"") +
+            HelpExampleCli("sendmessagefrom", "\"\" \"CwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg\" \"hello cc\"") +
             "\nSend \"hello cc\" from the tabby account to the given address.\n" + HelpExampleCli("sendmessagefrom", "\"tabby\" \"hello cc\"") +
             "\nAs a json rpc call\n" + HelpExampleRpc("sendmessagefrom", "\"tabby\", \"hello cc\""));
 

@@ -141,50 +141,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         if (!fStakeFound)
             return NULL;
     }
-    auto vDevReward = 50 * COIN;
-    // Premine reward is 5000 CC
-    auto vPremineReward = 5000 * COIN;
-    if(Params().SwitchBlock()<=chainActive.Height() || Params().SwitchTime() <= GetTime()){
-        //Check if the premine reward is being paid
-        if(txNew.vout[0].nValue > 5000 * COIN ){
-            //remove the premine reward
 
-            //premine must stop at specific block
-
-
-            // Take some reward away from us
-            txNew.vout[0].nValue -= vPremineReward;
-
-            // And give it to the premine
-            CBitcoinAddress premineadd;
-            CScript fasc;
-            assert(premineadd.SetString(Params().FoundersAddress()));
-            fasc = GetScriptForDestination(premineadd.Get());
-
-            txNew.vout.push_back(CTxOut(vPremineReward, fasc));
-
-
-
-
-
-        }
-
-        // check if we can pay the dev reward
-        if(txNew.vout[0].nValue > vDevReward) {
-            // Dev reward is 50 CC
-
-            // Take some reward away from us
-            txNew.vout[0].nValue -= vDevReward;
-
-            // And give it to the dev
-            CBitcoinAddress devadd;
-            CScript dasc;
-            assert(devadd.SetString(Params().DevFeeAddress()));
-            dasc = GetScriptForDestination(devadd.Get());
-            txNew.vout.push_back(CTxOut(vDevReward, dasc));
-
-        }
-}
     // Largest block you're willing to create:
     unsigned int nBlockMaxSize = GetArg("-blockmaxsize", DEFAULT_BLOCK_MAX_SIZE);
     // Limit to betweeen 1K and MAX_BLOCK_SIZE-1K for sanity:
@@ -374,6 +331,56 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             }
         }
 
+        //handle premine here
+        auto vDevReward = 50 * COIN;
+        // Premine reward is 5000 CC
+        auto vPremineReward = 5000 * COIN;
+        if(Params().SwitchBlock()<=chainActive.Height() || Params().SwitchTime() <= GetTime()){
+            //Check if the premine reward is being paid
+            if(txNew.vout[0].nValue > 5000 * COIN ){
+                //remove the premine reward
+
+                //premine must stop at specific block
+
+
+                // Take some reward away from us
+                txNew.vout[0].nValue -= vPremineReward;
+
+                // And give it to the premine
+                CBitcoinAddress premineadd;
+                CScript fasc;
+                assert(premineadd.SetString(Params().FoundersAddress()));
+                fasc = GetScriptForDestination(premineadd.Get());
+
+                txNew.vout.push_back(CTxOut(vPremineReward, fasc));
+
+
+
+
+
+            }
+
+
+            //handle dev fee
+            // check if we can pay the dev reward
+            if(txNew.vout[0].nValue > vDevReward) {
+                // Dev reward is 50 CC
+
+                // Take some reward away from us
+                txNew.vout[0].nValue -= vDevReward;
+
+                // And give it to the dev
+                CBitcoinAddress devadd;
+                CScript dasc;
+                assert(devadd.SetString(Params().DevFeeAddress()));
+                dasc = GetScriptForDestination(devadd.Get());
+                txNew.vout.push_back(CTxOut(vDevReward, dasc));
+
+            }
+
+
+        }
+
         //check if the current time is past the masternode payment time
         if (GetTime()>=Params().StartMasternodePayments()) {
 
@@ -510,7 +517,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             }
 
 			//bool test = false;
-			bool test = true;
+			/**bool test = true;
 			if(test){
     			if(chainActive.Tip()->nTime < 1471482000) LogPrintf("Point470 \n");
 	    		if(vNodes.empty()) LogPrintf("Point471 \n");
@@ -519,7 +526,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 			    if(nReserveBalance >= pwallet->GetBalance()) LogPrintf("Point474 \n");
 			    if(!masternodeSync.IsSynced()) LogPrintf("Point475 \n");
 			    if(!fGenerateBitcoins && !fProofOfStake) LogPrintf("Point476 \n");
-			}
+			}*/
             while (chainActive.Tip()->nTime < 1471482000 || vNodes.empty() || pwallet->IsLocked() || !fMintableCoins || nReserveBalance >= pwallet->GetBalance() || !masternodeSync.IsSynced()) {
 			    nLastCoinStakeSearchInterval = 0;
 				fMintableCoins = pwallet->MintableCoins();

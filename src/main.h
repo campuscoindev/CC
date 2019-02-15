@@ -253,6 +253,9 @@ bool ActivateBestChain(CValidationState& state, CBlock* pblock = NULL);
 CAmount GetProofOfStakeReward(int nHeight);
 CAmount GetProofOfWorkReward(int nHeight);
 CAmount GetBlockValue(int nHeight);
+CAmount GetProofOfStakeReward(int nHeight,CAmount masternodePayment);
+CAmount GetProofOfWorkReward(int nHeight,CAmount masternodePayment);
+CAmount GetBlockValue(int nHeight,CAmount masternodePayment);
 /** Create a new block index entry for a given block hash */
 CBlockIndex* InsertBlockIndex(uint256 hash);
 /** Abort with a message */
