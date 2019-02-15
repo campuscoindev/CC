@@ -11,7 +11,6 @@
 /**
  * network protocol versioning
  */
-//this will change with every release in January 2019
 static const int PROTOCOL_VERSION = 90012;
 
 
