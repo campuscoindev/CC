@@ -379,7 +379,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             }
 
 
-        }
+       }
 
         //check if the current time is past the masternode payment time
         if (GetTime()>=Params().StartMasternodePayments()) {

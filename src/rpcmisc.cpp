@@ -58,7 +58,6 @@ Value getinfo(const Array& params, bool fHelp)
             "  \"protocolversion\": xxxxx,   (numeric) the protocol version\n"
             "  \"walletversion\": xxxxx,     (numeric) the wallet version\n"
             "  \"balance\": xxxxxxx,         (numeric) the total cc balance of the wallet\n"
-            "  \"totalsupply\": xxxxxxx,     (numeric) the total coin supply\n"
             "  \"blocks\": xxxxxx,           (numeric) the current number of blocks processed in the server\n"
             "  \"timeoffset\": xxxxx,        (numeric) the time offset\n"
             "  \"connections\": xxxxx,       (numeric) the number of connections\n"
@@ -89,7 +88,6 @@ Value getinfo(const Array& params, bool fHelp)
     }
 #endif
     obj.push_back(Pair("blocks", (int)chainActive.Height()));
-    obj.push_back(Pair("totalsupply", ValueFromAmount(Params().MaxMoneyOut())));
     obj.push_back(Pair("timeoffset", GetTimeOffset()));
     obj.push_back(Pair("connections", (int)vNodes.size()));
     obj.push_back(Pair("proxy", (proxy.IsValid() ? proxy.ToStringIPPort() : string())));

@@ -267,8 +267,9 @@ void CMasternodePayments::FillBlockPayee(CBlock *pBlock, CMutableTransaction& tx
 
     CAmount bValue = GetBlockValue(pindexPrev->nHeight +1);
     CAmount masternodePayment = GetMasternodePayment(pindexPrev->nHeight +1, bValue, tier);
-    CAmount blockValue = GetBlockValue(pindexPrev->nHeight +1,masternodePayment);
+    CAmount blockValue = GetBlockValue(pindexPrev->nHeight +1);
     if (hasPayment) {
+
         if (fProofOfStake) {
             /**For Proof Of Stake vout[0] must be null
              * Stake reward can be split into many different outputs, so we must
@@ -280,33 +281,22 @@ void CMasternodePayments::FillBlockPayee(CBlock *pBlock, CMutableTransaction& tx
             txNew.vout[i].scriptPubKey = payee;
             txNew.vout[i].nValue = masternodePayment;
 
-            //if(pindexPrev->nHeight +1 <= TIERED_MASTERNODES_START_BLOCK) {
-                //subtract mn payment from the stake reward
-                if(txNew.vout[i - 1].nValue > masternodePayment) {
-                    txNew.vout[i - 1].nValue -= masternodePayment;
 
-                } else {
-                    uint64_t nSub = (masternodePayment / 2 / CENT) * CENT;
-                    txNew.vout[i - 2].nValue -= nSub;
-                    txNew.vout[i - 1].nValue -= masternodePayment - nSub;
-
-                }
-            //}
 
 			LogPrintf("fProofOfStake: masternode to pay value %u\n", masternodePayment);
         } else {
 
 
+            txNew.vout.resize(2);
 
-
-            if(txNew.vout[0].nValue > masternodePayment){
-                txNew.vout.resize(2);
-                txNew.vout[0].nValue = blockValue - masternodePayment;
+            //if(txNew.vout[0].nValue > masternodePayment){
+                //txNew.vout.resize(2);
+                //txNew.vout[0].nValue = blockValue - masternodePayment;
                 txNew.vout[1].scriptPubKey = payee;
                 txNew.vout[1].nValue = masternodePayment;
                 LogPrintf("CreateNewBlock: masternode to pay value %u\n", masternodePayment);
-                LogPrintf("CreateNewBlock: blockvalue to pay value %u\n", blockValue - masternodePayment);
-            }
+                LogPrintf("CreateNewBlock: blockvalue to pay value %u\n", blockValue );
+           // }
 
         }
 

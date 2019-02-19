@@ -152,10 +152,10 @@ public:
         //switch time for the old to new wallet
         nSwitchTime = 1550188800;//February 15th 2019
         nPremineTime = 1550188800;//February 15th 2019
-        nSwitchBlock = 760000;
+        nSwitchBlock = 779000;
         nDefaultPort = 28195;
         bnProofOfWorkLimit =  ~uint256(0) >> 20; // CC starting difficulty is 1 / 2^12  //20
-        nLastPOWBlock = 764000;
+        nLastPOWBlock = 763900;//764000;
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;

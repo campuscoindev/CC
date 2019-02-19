@@ -82,6 +82,10 @@ public:
     int64_t TargetSpacing() const { return nTargetSpacing; }
     int64_t Interval() const { return nTargetTimespan / nTargetSpacing; }
     int LAST_POW_BLOCK() const { return nLastPOWBlock; }
+    int COINBASE_MATURITY_OLD() const {
+
+        return nMaturity;
+    }
     int COINBASE_MATURITY() const {
         if(SwitchBlock()<=chainActive.Height() || SwitchTime() <= GetTime()){
             return nMaturityNew;
