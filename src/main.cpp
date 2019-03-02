@@ -2398,8 +2398,8 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     AssertLockHeld(cs_main);
     LogPrint("debug","Connect Block");
     // Check it again in case a previous version let a bad block in
-    //if (!CheckBlock(block, state, !fJustCheck, !fJustCheck))
-    //   return false;
+    if (!CheckBlock(block, state, !fJustCheck, !fJustCheck))
+       return false;
 
     // verify that the view's current state corresponds to the previous block
     uint256 hashPrevBlock = pindex->pprev == NULL ? uint256(0) : pindex->pprev->GetBlockHash();
@@ -2540,17 +2540,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         nExpectedMint = GetProofOfWorkReward(pindex->nHeight);
     }
 
-    //re-enable this at a later date
-    /**if(pindex->nHeight > TIERED_MASTERNODES_START_BLOCK && !block.mnvin.hash.IsNull()) {
-        int tier = GetMNTierByVin(block.mnvin);
-        if(tier <= 0) {
-            return state.DoS(100,
-                             error("ConnectBlock() : unknown masternode vin %s %d",
-                                   block.mnvin.hash.ToString().c_str(), block.mnvin.n),
-                             REJECT_INVALID, "bad-masternode-vin");
-        }
-        nExpectedMint += GetMasternodePayment(GetHeight(), 0, tier);
-    }*/
+    CheckReward(state,pindex,block);
+
+
     if(block.IsProofOfStake()) {
         int tier = GetMNTierByVin(block.mnvin);
         nExpectedMint += GetMasternodePayment(GetHeight(), 0, tier);
@@ -3537,7 +3529,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
 
     // Check timestamp
-    //LogPrint("debug", "%s: block=%s  is proof of stake=%d\n", __func__, block.GetHash().ToString().c_str(), block.IsProofOfStake());
+    LogPrint("debug", "%s: block=%s  is proof of stake=%d\n", __func__, block.GetHash().ToString().c_str(), block.IsProofOfStake());
 
 
     // Check the merkle root.
@@ -3615,10 +3607,11 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         LogPrintf("CheckBlock() : skipping transaction locking checks\n");
     }
 
-
+    CBlockIndex* pindexPrev = chainActive.Tip();
+ if (block.IsProofOfWork() && (pindexPrev->nHeight + 1 > 773000)) {
     // ----------- masternode payments / budgets -----------
 
-    CBlockIndex* pindexPrev = chainActive.Tip();
+
     if (pindexPrev != NULL) {
         int nHeight = 0;
         if (pindexPrev->GetBlockHash() == block.hashPrevBlock) {
@@ -3655,7 +3648,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
     if (nSigOps > MAX_BLOCK_SIGOPS)
         return state.DoS(100, error("CheckBlock() : out-of-bounds SigOpCount"),
             REJECT_INVALID, "bad-blk-sigops", true);
-*/
+}*/
     return true;
 }
 
@@ -4053,6 +4046,8 @@ bool ProcessNewBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDis
         }
         CheckBlockIndex();
 
+        //CheckReward(state,pindex,*pblock);
+
         if (!ret)
             return error("%s : AcceptBlock FAILED", __func__);
         break;
@@ -4081,7 +4076,32 @@ bool ProcessNewBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDis
     return true;
 }
 
+bool CheckReward(CValidationState &state,CBlockIndex* pindex,const CBlock& block){
+    if(pindex){
+    //if(pindex->nHeight > 773000 && !block.mnvin.hash.IsNull()) {
+        if(pindex->nHeight > 774700) {
+        LogPrintf("%s : VALIDATING REWARD\n", __func__);
+        if (!IsBlockPayeeValid(block, pindex->nHeight)) {
+            mapRejectedBlocks.insert(make_pair(block.GetHash(), GetTime()));
+            return state.DoS(0, error("ConnectBlock(CC): couldn't find masternode or superblock payments"),
+                             REJECT_INVALID, "bad-cb-payee");
+        }
 
+        int tier = GetMNTierByVin(block.mnvin);
+        if(tier <= 0) {
+            return state.DoS(100,
+                             error("ConnectBlock() : unknown masternode vin %s %d",
+                                   block.mnvin.hash.ToString().c_str(), block.mnvin.n),
+                             REJECT_INVALID, "bad-masternode-vin");
+        }
+
+    }
+
+    }
+    LogPrintf("%s : VALID REWARD\n", __func__);
+
+    return true;
+}
 
 bool TestBlockValidity(CValidationState& state, const CBlock& block, CBlockIndex* const pindexPrev, bool fCheckPOW, bool fCheckMerkleRoot)
 {

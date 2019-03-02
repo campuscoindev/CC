@@ -521,7 +521,9 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, CW
 
             bool fSkipCheck = false;
 
+            if(wss.nFileVersion>=60000){
             if (hash != 0) {
+                LogPrintf("Testing wallet %d", wss.nFileVersion);
                 // hash pubkey/privkey to accelerate wallet load
                 std::vector<unsigned char> vchKey;
                 vchKey.reserve(vchPubKey.size() + pkey.size());
@@ -534,6 +536,8 @@ bool ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue, CW
                 }
 
                 fSkipCheck = true;
+            }
+
             }
 
             if (!key.Load(pkey, vchPubKey, fSkipCheck)) {
