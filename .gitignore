@@ -1,0 +1,6 @@
+build
+*.o
+release/
+debug/
+/object_script*
+/Makefile*
