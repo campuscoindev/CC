@@ -99,82 +99,59 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
 				int nHeight = chainActive.Height();
 				int64_t nSubsidy;
 
-                if (nHeight > 1 && nHeight <= 6000000) {
-                    if(175 * COIN == txout.nValue) {
+				if(nHeight <= 5700 && nHeight > 0) {
+					nSubsidy = 10 * COIN;
+					if(nSubsidy * 10 / 100 == txout.nValue) {
+						sub.type = TransactionRecord::MNReward;
+					}
+				} else if (nHeight > 5700 && nHeight <= 6099) {
+					nSubsidy = 6 * COIN;
+					if(nSubsidy * 50 / 100 == txout.nValue) {
+						sub.type = TransactionRecord::MNReward;
+					}
+				} else if (nHeight > 6099 && nHeight <= 6100) {
+					nSubsidy = 12150 * COIN;
+					if(nSubsidy * 0 / 100 == txout.nValue) {
+						sub.type = TransactionRecord::MNReward;
+					}
+				} else if (nHeight > 6100 && nHeight <= 6130) {
+					nSubsidy = 1 * COIN;
+					if(nSubsidy * 10 / 100 == txout.nValue) {
+						sub.type = TransactionRecord::MNReward;
+					}
+				} else if (nHeight > 6130 && nHeight <= 6250) {
+					nSubsidy = 10 * COIN;
+					if(nSubsidy * 10 / 100 == txout.nValue) {
+						sub.type = TransactionRecord::MNReward;
+					}
+				} else if (nHeight > 6250 && nHeight <= Params().LAST_POW_BLOCK()-1) {
+					nSubsidy = 6 * COIN;
+					if(nSubsidy * 50 / 100 == txout.nValue) {
+						sub.type = TransactionRecord::MNReward;
+					}
+				} else if (nHeight > Params().LAST_POW_BLOCK()-1 && nHeight <= Params().LAST_POW_BLOCK()) {
+					nSubsidy = 50000 * COIN;
+					if(nSubsidy * 0 / 100 == txout.nValue) {
+						sub.type = TransactionRecord::MNReward;
+					}
+				} else if (nHeight > Params().LAST_POW_BLOCK() && nHeight <= TIERED_MASTERNODES_START_BLOCK) {
+					nSubsidy = 20 * COIN;
+					if(nSubsidy * 80 / 100 == txout.nValue) {
+						sub.type = TransactionRecord::MNReward;
+					}
+                } else if (nHeight > TIERED_MASTERNODES_START_BLOCK && nHeight <= TIERED_MASTERNODES_START_BLOCK + 129600) {
+                    if(txout.nValue == 12 * COIN || txout.nValue == 27 * COIN || txout.nValue == 72 * COIN || txout.nValue == 156 * COIN) {
                         sub.type = TransactionRecord::MNReward;
                     }
-                    if(400 * COIN == txout.nValue) {
+				} else if (nHeight > TIERED_MASTERNODES_START_BLOCK + 129600 && nHeight <= TIERED_MASTERNODES_START_BLOCK + 259200) {
+                    if(txout.nValue == 4 * COIN || txout.nValue == 9 * COIN || txout.nValue == 24 * COIN || txout.nValue == 52 * COIN) {
                         sub.type = TransactionRecord::MNReward;
                     }
-                    if(850 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                } else if (nHeight > 6000000 && nHeight <= 769000) {
-
-
-                    if(175 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                    if(400 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                    if(850 * COIN == txout.nValue) {
+				} else if (nHeight > TIERED_MASTERNODES_START_BLOCK + 259200) {
+                    if(txout.nValue == 1 * COIN || txout.nValue == 3 * COIN || txout.nValue == 8 * COIN || txout.nValue == 17 * COIN) {
                         sub.type = TransactionRecord::MNReward;
                     }
                 }
-                else if (nHeight > 769000 && nHeight <= 1018400) {
-
-
-                    if(175 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                    if(400 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                    if(850 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                }
-                else if (nHeight > 1018400 && nHeight <= 1536800) {
-                    if(122.5 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                    if(280 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                    if(595 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-
-
-                } else if (nHeight > 1536800 && nHeight <= 2015300) {
-                    if(104.15 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                    if(238 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                    if(505.75 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-
-
-                }
-                else if (nHeight > 2015300) {
-
-                    if(72.95 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                    if(166.6 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-                    if(354.025 * COIN == txout.nValue) {
-                        sub.type = TransactionRecord::MNReward;
-                    }
-
-
-                }
-				
                 parts.append(sub);
             }
         }

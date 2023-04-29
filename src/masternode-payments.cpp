@@ -219,10 +219,8 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
     const CTransaction& txNew = (nBlockHeight > Params().LAST_POW_BLOCK() ? block.vtx[1] : block.vtx[0]);
 
     //check for masternode payee
-    if (masternodePayments.IsTransactionValid(block.mnvin, txNew, nBlockHeight)) {
-        LogPrintf("%s: Masternode payment valid", __func__);
+    if (masternodePayments.IsTransactionValid(block.mnvin, txNew, nBlockHeight))
         return true;
-    }
     LogPrintf("Invalid mn payment detected %s\n", txNew.ToString().c_str());
 
     return false;
@@ -487,7 +485,7 @@ bool CMasternodePayments::AddWinningMasternode(CMasternodePaymentWinner& winnerI
 bool CMasternodeBlockPayees::IsTransactionValid(const COutPoint &mnvin, const CTransaction& txNew)
 {
     LOCK(cs_vecPayments);
-    LogPrintf("%s: Masternode payment check", __func__);
+
     int nMaxSignatures = 0;
 	int nMasternode_Drift_Count = 0;
     std::string strPayeesPossible = "";
@@ -529,15 +527,11 @@ bool CMasternodeBlockPayees::IsTransactionValid(const COutPoint &mnvin, const CT
         bool found = false;
         BOOST_FOREACH (CTxOut out, txNew.vout) {
             if (payee.scriptPubKey == out.scriptPubKey) {
-                if(out.nValue >= requiredMasternodePayment) {
-                    LogPrintf("%s: Masternode payment found", __func__);
+                if(out.nValue >= requiredMasternodePayment)
                     found = true;
-                }
-                else {
-                    LogPrintf("Masternode payment is out of drift range. Paid=%s Min=%s\n",
-                              FormatMoney(out.nValue).c_str(), FormatMoney(requiredMasternodePayment).c_str());
-                }
-                }
+                else
+                    LogPrintf("Masternode payment is out of drift range. Paid=%s Min=%s\n", FormatMoney(out.nValue).c_str(), FormatMoney(requiredMasternodePayment).c_str());
+            }
         }
 
         if (payee.nVotes >= MNPAYMENTS_SIGNATURES_REQUIRED) {
